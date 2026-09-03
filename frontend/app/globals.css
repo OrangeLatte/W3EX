@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-term-bg: #0b0e11;
+  --color-term-panel: #181a20;
+  --color-term-panel2: #1e2329;
+  --color-term-border: #2b3139;
+  --color-term-muted: #848e9c;
+  --color-term-dim: #5e6673;
+  --color-up: #0ecb81;
+  --color-down: #f6465d;
+  --color-accent: #fcd535;
+  --color-ai: #fcd535;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-term-bg);
+  color: #eaecef;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #2b3139;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a424d;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tbl-row:hover {
+  background: rgba(43, 49, 57, 0.4);
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: #0b0e11;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: filter 0.15s ease;
+}
+.btn-primary:hover {
+  filter: brightness(1.08);
+}
+.btn-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Python runtime artifacts (also covered by backend/.gitignore)
+*.egg-info/
+
+# Frontend build artifacts (also covered by frontend/.gitignore)
+.next/
+node_modules/
+
+# Local databases / logs
+*.db
+*.log

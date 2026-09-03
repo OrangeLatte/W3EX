@@ -1,0 +1,8 @@
+**/__pycache__
+**/*.pyc
+.env
+w3ex.db
+tests/
+node_modules
+.next
+tsconfig.tsbuildinfo

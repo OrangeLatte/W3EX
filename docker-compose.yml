@@ -1,0 +1,48 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: w3ex
+      POSTGRES_PASSWORD: w3ex
+      POSTGRES_DB: w3ex
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U w3ex"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: ../Dockerfile.backend
+    environment:
+      W3EX_DATABASE_URL: postgresql+asyncpg://w3ex:w3ex@postgres:5432/w3ex
+      W3EX_REDIS_URL: redis://redis:6379/0
+      W3EX_MARKET_PROVIDER: ${W3EX_MARKET_PROVIDER:-rich}
+      W3EX_EXECUTION_PROVIDER: ${W3EX_EXECUTION_PROVIDER:-rich}
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+  web:
+    build:
+      context: ./frontend
+      dockerfile: ../Dockerfile.frontend
+      args:
+        NEXT_PUBLIC_API_BASE: http://localhost:8000/api/v1
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+
+volumes:
+  pgdata:
