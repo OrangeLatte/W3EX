@@ -16,6 +16,16 @@ An AI-native Web3 market and paper-trading terminal: **Observe → Understand �
 - **Replay & Audit**: every trade keeps the quote snapshot, the recommendation rationale, and a "what if I had picked the other route" counterfactual comparison
 - **6-language i18n**: English / 中文 / Français / Español / العربية (RTL) / Русский
 
+## Demo
+
+| Market Overview | Asset Detail |
+|---|---|
+| ![Market Overview](docs/assets/01-market-overview.png) | ![Asset Detail](docs/assets/02-asset-detail.png) |
+| **Trade Workspace** | **AI Coaches** |
+| ![Trade Workspace](docs/assets/03-trade-workspace.png) | ![AI Coaches](docs/assets/04-ai-coaches.png) |
+| **Macro Detail (SPX)** | |
+| ![Macro Detail](docs/assets/05-macro-detail.png) | |
+
 ## Architecture
 
 ```

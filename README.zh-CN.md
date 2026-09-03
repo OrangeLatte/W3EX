@@ -16,6 +16,16 @@ AI-native Web3 行情与模拟交易终端：**看行情 → 理解市场 → �
 - **回放审计**：每笔交易保留报价快照 + 推荐理由 + 「如果选另一条路线会怎样」反事实对比
 - **六语 i18n**：中/英/法/西/阿（RTL）/俄
 
+## 界面展示
+
+| 行情总览 | 标的详情 |
+|---|---|
+| ![行情总览](docs/assets/01-market-overview.png) | ![标的详情](docs/assets/02-asset-detail.png) |
+| **交易工作台** | **AI 教练** |
+| ![交易工作台](docs/assets/03-trade-workspace.png) | ![AI 教练](docs/assets/04-ai-coaches.png) |
+| **宏观详情（标普500）** | |
+| ![宏观详情](docs/assets/05-macro-detail.png) | |
+
 ## Architecture
 
 ```
